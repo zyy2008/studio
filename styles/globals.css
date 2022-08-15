@@ -1,0 +1,99 @@
+:root {
+  --notech-font: 'Kumbh Sans',sans-serif;
+  --notech-reey-font: "reeyregular";
+  --notech-gray: #777181;
+  --notech-gray-rgb: 119,113,129;
+  --notech-white: #fff;
+  --notech-white-rgb: 255,255,255;
+  --notech-black: #1b1525;
+  --notech-black-rgb: 27,21,37;
+  --notech-base: #6653e8;
+  --notech-base-rgb: 102,83,232;
+  --notech-primary: #2be4ac;
+  --notech-primary-rgb: 43,228,172;
+  --notech-extra: #f7f7f9;
+  --notech-extra-rgb: 247,247,249;
+  --notech-bdr-color: #e9e9ee;
+  --notech-bdr-color-rgb: 233,233,238
+}
+
+
+.thm-btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  outline: none!important;
+  background-color: var(--notech-base);
+  color: var(--notech-white);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 40px 14px;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+  overflow: hidden;
+  z-index: 1
+}
+.thm-btn:hover {
+  color: var(--notech-white)
+}
+
+.thm-btn:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: var(--notech-black);
+  -webkit-transition-delay: .1s;
+  transition-delay: .1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-duration: .4s;
+  transition-duration: .4s;
+  -webkit-transition-property: all;
+  transition-property: all;
+  opacity: 1;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  z-index: -1
+}
+
+.thm-btn:hover:after {
+  opacity: 1;
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1)
+}
+
+a,a:hover,a:focus,a:visited {
+  text-decoration: none;
+}
+
+
+#main-slider-pagination {
+  z-index: 10;
+  bottom: 59px;
+  left: 50%;
+  width: 100%;
+  max-width: 1200px;
+  -webkit-transform: translate(-50%,calc(-50%+95px));
+  transform: translate(-50%,calc(0%+0px));
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 15px
+}
+
+

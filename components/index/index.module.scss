@@ -1,0 +1,222 @@
+.swiper {
+  :global {
+    .swiper-slide {
+      position: relative;
+      background-color: var(--notech-black);
+    }
+    .swiper-pagination {
+      z-index: 10;
+      bottom: 59px;
+      left: 50%;
+      width: 100%;
+      max-width: 1200px;
+      -webkit-transform: translate(-50%, calc(-50% + 95px));
+      transform: translate(-50%, calc(0% + 0px));
+      text-align: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      padding: 0 15px;
+    }
+    .swiper-pagination .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      opacity: 0.4;
+      background-color: var(--notech-white);
+      -webkit-transition: all 500ms ease;
+      transition: all 500ms ease;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet + .swiper-pagination-bullet {
+      margin-left: 10px;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+      margin: 0;
+    }
+
+    .swiper-pagination
+      .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      width: 13px;
+      height: 13px;
+      opacity: 1;
+    }
+    .image-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: opacity 1500ms ease-in, -webkit-transform 7000ms ease;
+      transition: opacity 1500ms ease-in, -webkit-transform 7000ms ease;
+      transition: transform 7000ms ease, opacity 1500ms ease-in;
+      transition: transform 7000ms ease, opacity 1500ms ease-in,
+        -webkit-transform 7000ms ease;
+      background-blend-mode: luminosity;
+      background-color: #1b1525;
+      opacity: 0.5;
+      z-index: 1;
+    }
+    .container {
+      position: relative;
+      padding-top: 236px;
+      padding-bottom: 245px;
+      z-index: 30;
+    }
+    p {
+      margin: 0;
+      font-size: 36px;
+      color: var(--notech-primary);
+      text-transform: uppercase;
+      line-height: 46px;
+      letter-spacing: 0.1em;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translateY(-120px);
+      transform: translateY(-120px);
+      -webkit-transition-delay: 1000ms;
+      transition-delay: 1000ms;
+      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease,
+        -webkit-transform 2000ms ease;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 150px;
+      color: var(--notech-white);
+      font-weight: 700;
+      line-height: 150px;
+      margin-bottom: 40px;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translateY(-120px);
+      transform: translateY(-120px);
+      -webkit-transition-delay: 1000ms;
+      transition-delay: 1000ms;
+      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease,
+        -webkit-transform 2000ms ease;
+    }
+    .main-slider__btn-video-box {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translateY(120px);
+      transform: translateY(120px);
+      -webkit-transition-delay: 1000ms;
+      transition-delay: 1000ms;
+      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease,
+        -webkit-transform 2000ms ease;
+    }
+    .main-slider__content {
+      position: relative;
+      display: block;
+      text-align: center;
+    }
+    .main-slider__btn-box {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    .main-slider__shape-1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      mix-blend-mode: overlay;
+      -webkit-transform: translateX(470px);
+      transform: translateX(470px);
+      opacity: 0;
+      z-index: 1;
+    }
+    .main-slider__shape-2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      mix-blend-mode: screen;
+      -webkit-transform: translateX(495px);
+      transform: translateX(495px);
+      opacity: 0;
+      z-index: 1;
+    }
+    .main-slider__shape-3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      mix-blend-mode: overlay;
+      -webkit-transform: translateX(-385px);
+      transform: translateX(-385px);
+      opacity: 0;
+      z-index: 1;
+    }
+    .swiper-slide-active {
+      h2,
+      p,
+      .main-slider__btn-video-box {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: translateY(0) translateX(0);
+        transform: translateY(0) translateX(0);
+      }
+      .main-slider__shape-1 {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-transition: all 1000ms ease;
+        transition: all 1000ms ease;
+      }
+      .main-slider__shape-2 {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-transition: all 1000ms ease;
+        transition: all 1000ms ease;
+        -webkit-transition-delay: 1500ms;
+        transition-delay: 1500ms;
+      }
+      .main-slider__shape-3 {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-transition: all 1000ms ease;
+        transition: all 1000ms ease;
+        -webkit-transition-delay: 2000ms;
+        transition-delay: 2000ms;
+      }
+      .image-layer {
+        transform: scale(1.15);
+      }
+    }
+  }
+}

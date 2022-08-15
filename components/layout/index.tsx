@@ -47,7 +47,7 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
         />
       }
     >
-      <Container fluid pl={0} pr={0} pt={60} pb={50}>
+      <Container fluid pl={0} pr={0}>
         {children}
       </Container>
     </AppShell>

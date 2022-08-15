@@ -1,4 +1,4 @@
-import React, { MutableRefObject } from "react";
+import React, { useEffect } from "react";
 import {
   createStyles,
   Header as BaseHeader,
@@ -7,6 +7,7 @@ import {
   Center,
   Burger,
   Container,
+  Transition,
 } from "@mantine/core";
 import { useDisclosure, useIntersection } from "@mantine/hooks";
 import { IconChevronDown } from "@tabler/icons";
@@ -77,6 +78,10 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   const [opened, { toggle }] = useDisclosure(false);
   const { classes } = useStyles();
 
+  useEffect(() => {
+    console.log(entry?.isIntersecting);
+  }, [entry?.isIntersecting]);
+
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
       <Menu.Item key={item.link}>{item.label}</Menu.Item>
@@ -118,10 +123,9 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
     <BaseHeader
       height={56}
       className={classes.header}
-      mb={120}
       ref={ref}
       style={{
-        backgroundColor: entry?.isIntersecting ? "red" : "blue",
+        position: entry?.isIntersecting ? "relative" : "fixed",
       }}
     >
       <Container fluid>
