@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useMemo, useEffect, useState, CSSProperties } from "react";
 import {
   createStyles,
   Header as BaseHeader,
@@ -7,9 +7,8 @@ import {
   Center,
   Burger,
   Container,
-  Transition,
 } from "@mantine/core";
-import { useDisclosure, useIntersection } from "@mantine/hooks";
+import { useDisclosure, useWindowScroll } from "@mantine/hooks";
 import { IconChevronDown } from "@tabler/icons";
 import { MantineLogo } from "@mantine/ds";
 
@@ -74,13 +73,30 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ links }) => {
-  const { ref, entry } = useIntersection();
+  const [scroll] = useWindowScroll();
   const [opened, { toggle }] = useDisclosure(false);
   const { classes } = useStyles();
+  const [style, setStyle] = useState<CSSProperties>();
+  const isShow = useMemo<boolean>(() => scroll.y > 56, [scroll.y]);
 
   useEffect(() => {
-    console.log(entry?.isIntersecting);
-  }, [entry?.isIntersecting]);
+    if (isShow) {
+      setStyle({
+        transform: "translateY(-100%)",
+      });
+      setTimeout(() => {
+        setStyle({
+          transition:
+            "transform 500ms ease,visibility 500ms ease,-webkit-transform 500ms ease",
+          transform: "translateY(0)",
+        });
+      }, 0);
+    } else {
+      setStyle({
+        transform: "translateY(0)",
+      });
+    }
+  }, [isShow]);
 
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
@@ -123,9 +139,9 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
     <BaseHeader
       height={56}
       className={classes.header}
-      ref={ref}
       style={{
-        position: entry?.isIntersecting ? "relative" : "fixed",
+        ...style,
+        position: !isShow ? "relative" : "fixed",
       }}
     >
       <Container fluid>
